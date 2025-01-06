@@ -1,0 +1,32 @@
+<h2>Insurance Policies</h2>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let policy of policies; let i = index" [attr.data-index]="i">
+      <td>{{ policy.id }}</td>
+      <td>{{ policy.name }}</td>
+      <td>{{ policy.type }}</td>
+      <td>
+        <button 
+          class="btn-edit" 
+          [routerLink]="['/edit-policy', policy.id]" 
+          aria-label="Edit policy {{ policy.name }}">
+          Edit
+        </button>
+        <button 
+          class="btn-delete" 
+          (click)="confirmDelete(policy.id, policy.name)" 
+          aria-label="Delete policy {{ policy.name }}">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

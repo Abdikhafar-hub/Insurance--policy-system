@@ -1,0 +1,11 @@
+<form [formGroup]="policyForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="policyName">Policy Name</label>
+    <input id="policyName" formControlName="policyName" />
+  </div>
+  <div>
+    <label for="policyDetails">Policy Details</label>
+    <textarea id="policyDetails" formControlName="policyDetails"></textarea>
+  </div>
+  <button type="submit">Submit</button>
+</form>
